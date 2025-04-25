@@ -7,9 +7,7 @@ Esta herramienta no solo pertenece a JavaScript, sino más bien a los lenguajes 
 ## Declaración de una Función en JS
 
 En JS tenemos varias formas para crear una función, las funciones **Declarativas**, las funciones **Expresadas** y las **Arrow Functions**.
-
-
-
+>
 - Funciones Declarativas:
 
 <pre>

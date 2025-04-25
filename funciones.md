@@ -7,7 +7,7 @@ Esta herramienta no solo pertenece a JavaScript, sino más bien a los lenguajes 
 ## Declaración de una Función en JS
 
 En JS tenemos varias formas para crear una función, las funciones **Declarativas**, las funciones **Expresadas** y las **Arrow Functions**.
->
+
 - Funciones Declarativas:
 
 <pre>
@@ -18,6 +18,7 @@ En JS tenemos varias formas para crear una función, las funciones **Declarativa
 
 *Se utiliza la palabra reservada **function** seguido del nombre por el cual se la va a mandar a llamar o invocar, seguido de parentesis en donde se pueden agregar parámetros, seguido de llaves las cuales se encargan de envolver el código que va a ejecutar la función.*
 
+---
 
 - Funciones Expresadas:
 
@@ -31,6 +32,7 @@ En JS tenemos varias formas para crear una función, las funciones **Declarativa
 
 > La diferencia fundamental entre las funciones `Declarativas` y `Expresadas`, es que las `Expresadas` sólo están disponibles a partir de la inicialización de la variable. Si ejecutamos la variable antes de declararla, nos va a arrojar error.
 
+---
 
 - Arrow Functions:
 
@@ -60,4 +62,30 @@ Para declarar un Arrow Function se utiliza la siguiente sintaxis:
   };
 </pre>
 
+---
+
+## Invocar Funciones
+
+Una vez declarada la función, para poder utilizarla debemos `Invocarla`. Para ello, escribiremos el nombre de la función seguido de paréntesis.
+
+<pre>
+  function resta() {
+    return 20 - 10;
+  }
+  
+  resta(); // 10
+</pre>
+
+*Al utilizar la sentencia `resta();` nos permite ejecutar el código interno dentro de la función, **retornando** el resultado el cual podríamos guardarlo dentro de una nueva variable.*
+
+>**IMPORTANTE**: Si utilizamos solamente `resta` sin los paréntesis estaríamos haciendo solamente `Referencia a la función`, lo cual sirve para casos en donde se podria pasar como parámetro en un callback.
+
+<pre>
+saludar => Referencia a la función
+saludar() => Llamada/ejecución de la función 
+</pre>
+
+---
+
+## Palabra reservada RETURN
 

@@ -29,4 +29,4 @@ function search() {
 
 *En este caso la función es **anónima** (sin nombre) y se guarda dentro de una variable o una constante tradicional*
 
-> Puedes reemplazar `javascript` con cualquier lenguaje para coloreado: `python`, `bash`, `json`, `html`, etc.
+> La diferencia fundamental entre las funciones `Declarativas` y `Expresadas`, es que las `Expresadas` sólo están disponibles a partir de la inicialización de la variable. Si ejecutamos la variable antes de declararla, nos va a arrojar error.

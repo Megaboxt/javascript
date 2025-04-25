@@ -12,7 +12,6 @@ En JS tenemos varias formas para crear una función, las funciones **Declarativa
 - Funciones Declarativas:
 
 <pre>
-```
 function search() {
   // proceso encapsulado
 }

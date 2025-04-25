@@ -9,24 +9,57 @@ Esta herramienta no solo pertenece a JavaScript, sino más bien a los lenguajes 
 En JS tenemos varias formas para crear una función, las funciones **Declarativas**, las funciones **Expresadas** y las **Arrow Functions**.
 
 
+
 - Funciones Declarativas:
 
 <pre>
-function search() {
-  // proceso encapsulado
-}
+  function search() {
+    // proceso encapsulado
+  };
 </pre>
 
 *Se utiliza la palabra reservada **function** seguido del nombre por el cual se la va a mandar a llamar o invocar, seguido de parentesis en donde se pueden agregar parámetros, seguido de llaves las cuales se encargan de envolver el código que va a ejecutar la función.*
+
 
 - Funciones Expresadas:
 
 <pre>
   const search = function () {
     // proceso encapsulado
-  }
+  };
 </pre>
 
-*En este caso la función es **anónima** (sin nombre) y se guarda dentro de una variable o una constante tradicional*
+*En este caso la función es **anónima** (sin nombre) y se guarda dentro de una variable o una constante tradicional.*
 
 > La diferencia fundamental entre las funciones `Declarativas` y `Expresadas`, es que las `Expresadas` sólo están disponibles a partir de la inicialización de la variable. Si ejecutamos la variable antes de declararla, nos va a arrojar error.
+
+
+- Arrow Functions:
+
+Introducidas al lenguaje a partir de la especificación `ES6`, son otra forma de declarar funciones y hoy juegan un papel importante a la hora de escribir programas de JavaScript Moderno.
+
+Para declarar un Arrow Function se utiliza la siguiente sintaxis:
+
+<pre>
+  const resta = () => { /* Tarea o proceso */ };
+</pre>
+
+*Podemos notar que es similar a la función `Expresada` solo que omitimos la palabra reservada `function` y luego de los paréntesis colocamos una "flecha" compuesta por los caracteres `=` y `>` seguido de llaves.*
+
+>**OPCIONAL**: En caso de que la función solamente sea de una sola línea de código, se pueden quitar las llaves y quedaría un `return` implícito.
+
+<pre>
+  /* return Implícito */
+  const resta = () => 20 - 10;
+</pre>
+
+<pre>
+  /* return Explícito */
+  const resta = () => {
+    const resultado = 20 - 10;
+
+    return resultado;
+  };
+</pre>
+
+

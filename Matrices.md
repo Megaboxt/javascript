@@ -16,5 +16,5 @@ En resumen, una matriz es simplemente un array que contiene otros arrays.
 </pre>
 
 
->Esta matriz tiene 3 filas y 3 columnas.  
+>Esta matriz tiene **3 filas y 3 columnas**.  
 >Puedes acceder a los elementos con dos índices: `matriz[fila][columna]`.

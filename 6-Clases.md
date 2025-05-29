@@ -10,16 +10,46 @@ La manera de crear classes en lenguajes basados enteramente en el uso de `POO`, 
 
 ---
 
-## Creando una Class
+## Estructura básica de una Class
 
 <pre>
-  class User {
-    constructor(name, email, password) {
-      this.name = name;
-      this.email = email;
-      this.password = password;
+  class Persona {
+    constructor(nombre, edad) {
+      this.nombre = nombre;
+      this.edad = edad;
     }
 
-    login(inputEmail, password)
+    saludar() {
+      console.log(`Hola! mi nombre es ${this.nombre} y tengo ${this.edad} años.`);
+    }
   }
 </pre>
+
+
+### Desglose de la estructura de la Clase:
+
+- Persona (el nombre de la clase): Puedes ponerle cualquier nombre, pero por convención, se escribe la primera letra en mayúsculas, para distinguirlo de funciones normales.  
+
+- {...} (Llaves de la clase): Todo lo que definimos dentro de la clase (como variables y funciones) va dentro de las llaves `{}`.  
+
+- constructor(...): Esta es una función especial que se ejecuta automáticamente cuando creamos un nuevo objeto con esta clase. Por ejemplo:
+
+<pre>
+  constructor(nombre, edad) {
+    this.nombre = nombre;
+    this.edad = edad;
+  }
+</pre>
+
+Cómo funciona este bloque ?  
+
+* constructor: Palabra reservada.  
+
+* (nombre, edad): Son parámetros, es decir, los valores que se le pasan cuando se crea una nueva "Persona".  
+
+* `this.nombre = nombre` significa:
+    * `this.nombre` se refiere a la propiedad del objeto que estamos creando.
+    * `nombre` (sin `this`) es el parámetro que recibimos.
+    * De esa manera guardamos ese valor dentro del objeto.
+ 
+* `this`: Es una palabra especial en JS. Que se utiliza para hacer referencia al **Objeto Actual** que se esta construyendo o usando.

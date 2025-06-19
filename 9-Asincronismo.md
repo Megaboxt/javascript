@@ -2,15 +2,15 @@
 
 Temario: 
 
-- [Fundamentos]()
+- [Fundamentos](#fundamentos-del-asincronismo)
 
-- [Single Thread]()
+- [Single Thread](#cómo-funciona-el-single-thread-)
 
-- [Call Stack]()
+- [Call Stack](#call-stack)
 
-- [Event Loop]()
+- [Event Loop](#event-loop)
 
-- [Callback Queue]()
+- [Callback Queue](#callback-queue)
 
 ---  
 

@@ -34,12 +34,48 @@ Esto se logra mediante el uso del mecanismo NO bloqueante de código llamado *"E
 
 ## Call Stack  
 
+La *"Call Stack"* o también se le puede decir *"Pila de Llamadas"*, es una *Estructura de Datos* que mantiene un registro de las funciones que están siendo ejecutadas durante la ejecución del programa.  
+Cuando una función *se llama a sí misma*, se agrega a la pila de llamadas. Cuando se completa la ejecución de esa función, se elimina de la pila de llamadas.  
+
+![image](https://github.com/user-attachments/assets/6bc5ef4c-94c9-49e0-abb4-0c7430aefbe5)  
+
+
 ## Event Loop  
 
-Básicamente, es un ciclo infinito (función) que constantemente verifica si hay tareas pendientes (eventos) en la Call Stack y en la Callback Queue, si las hay, las va ejecutando en la Call Stack, permitiendo que el programa continúe respondiendo a nuevas acciones sin detenerse.
+Básicamente, es un algorítmo que crea un ciclo, un bucle infinito en una función, que constantemente verifica si hay tareas pendientes o eventos en la Call Stack y en la Callback Queue del programa, si las hay, las va ejecutando en la Call Stack, permitiendo que el programa continúe respondiendo a nuevas acciones sin detenerse.
 
-- Si la *"Call Stack"* - *"Pila de Llamdas"* está vacía, toma la primera función de la Callback Queue y la coloca en la pila para su ejecución.
+- Si la *"Call Stack"* está vacía, toma la primera función de la Callback Queue y la coloca en la pila para su ejecución.
 
-- Si el *"Call Stack"* tiene tareas pendientes, espera a que se vacie antes de procesar la Callback Queue.
+- Si el *"Call Stack"* tiene tareas pendientes, espera a que se vacie antes de procesar la Callback Queue.  
+
+![image](https://github.com/user-attachments/assets/8d5c805d-75be-4461-a376-4b3c846ee590)  
+
 
 ## Callback Queue
+
+Las *Callback Queue* es una *Estructura de Datos (una cola FIFO: First In, First Out)* en JavaScript que se utiliza para almacenar las funciones callback que ya están listas para ser ejecutadas, pero esperan su turno para pasar por la *Call Stack*.
+
+La Callback Queue no ejecuta código por sí misma, solamente lo almacena temporalmente hasta que el *Event Loop* los pase a la *Call Stack*.  
+
+
+### Qué funciones van a la Callback Queue ?  
+
+
+| Origen                                              | Va a la Callback Queue (Macrotask Queue) |
+| --------------------------------------------------- | ---------------------------------------- |
+| `setTimeout()`                                      | ✅                                        |
+| `setInterval()`                                     | ✅                                        |
+| `setImmediate()` *(solo Node.js)*                   | ✅                                        |
+| Eventos del DOM (`click`, etc.)                     | ✅                                        |
+| `fetch().then()` (pero el `.then()` va a otra cola) | ❌ (va a la *microtask queue*)            |
+| `requestAnimationFrame()`                           | ❌ (va a una cola especial del navegador) |
+
+
+
+Cuando se llama a una función en asincrónica en JavaScript, como por ejemplo una solicitud de datos a una fuente externa o una animación en el navegador, la función no se ejecuta de manera sincrónica.  
+En su lugar, se coloca en una *Cola de Tareas* tambien llamada *Callback Queue* que espera a que se completen todas las tareas sincrónicas, una vez el Call Stack está vacío, el Event Loop se encarga de ejecutar las funciones que estan en la Callback Queue en el orden que fueron llegando o ejecutandose cada función.  
+
+Un ejemplo común, es cuando se realiza una consulta a una API externa (Fuente de Datos). Cuando se realiza dicha solicitud, el programa no espera a que esta acción se complete, la agrega a la Callback Queue para que se ejecute en segundo plano con el Event Loop, una vez finalizada la ejecución en segundo plano y obtenida la respuesta lo agrega a la Call Stack.  
+
+
+
